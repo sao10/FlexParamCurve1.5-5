@@ -1,2 +1,3 @@
 language: R
 cache: packages
+env: _R_CHECK_LENGTH_1_CONDITION = "package:_R_CHECK_PACKAGE_NAME_,abort,verbose"
