@@ -5,4 +5,5 @@ env:
     global: 
     - _R_CHECK_LENGTH_1_CONDITION = "package:_R_CHECK_PACKAGE_NAME_,abort,verbose"
     - R_C_BOUNDS_CHECK = yes
+    - _R_CHECK_FORCE_SUGGESTS_ = false
      
