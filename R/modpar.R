@@ -21,8 +21,9 @@ structure(function
                      ) {
     if(!is.na(pn.options)) {
     if(is.character(pn.options) == FALSE) stop("character variable name required for pn.options") 
-    			}
-    ckfmtnum <- list(first.y[1], x.at.first.y[1], last.y[1], x.at.last.y[1])
+    }
+		if( anyNA(data.frame(x, y)) == TRUE ) stop ("This function does not handle missing data values for x or y. Please subset the data, e.g. mydataframe[!is.na(mydataframe),], to remove them prior to function call")
+		ckfmtnum <- list(first.y[1], x.at.first.y[1], last.y[1], x.at.last.y[1])
     names(ckfmtnum) <- c("first.y", "x.at.first.y", "last.y", "x.at.last.y")
     fun1<-function(x){!is.na(x)}
     ts<-lapply(ckfmtnum,fun1)

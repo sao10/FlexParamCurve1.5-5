@@ -2269,9 +2269,9 @@ SSposnegRichards <- structure(function(x, Asym = NA,
                   options(warn = -1)
                   if(modno == 17.2 | modno == 17.4) RAsym <- Asym
                   if(modno == 17.3| modno == 17.4) RM <- M              
-                  if (Re(as.complex(1 + M[1] * exp(-K[1] * (xy$x - 
+                  if (Re(as.complex(1 + M[1] * exp(-K[1] * (xy$x[1] - 
                     Infl[1])))) < 0) {
-                    if (Re(as.complex(1 + RM[1] * exp(-Rk[1] * (xy$x - 
+                    if (Re(as.complex(1 + RM[1] * exp(-Rk[1] * (xy$x[1] - 
                       Ri[1])))) < 0) {
                       if (modno >= 17 & modno < 18) {
                             y1 <- SSposnegRichardsF17(xy$x, Asym, 
@@ -2348,7 +2348,7 @@ SSposnegRichards <- structure(function(x, Asym = NA,
                       }
                     }
                   } else {
-                    if (Re(as.complex(1 + RM[1] * exp(-Rk[1] * (xy$x - 
+                    if (Re(as.complex(1 + RM[1] * exp(-Rk[1] * (xy$x[1] - 
                       Ri[1])))) < 0) {
                       if (modno >= 17 & modno < 18) {
                         y1 <- SSposnegRichardsF17(xy$x, Asym, 
