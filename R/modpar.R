@@ -28,13 +28,13 @@ structure(function
     fun1<-function(x){!is.na(x)}
     ts<-lapply(ckfmtnum,fun1)
     ckfmtnum <- ckfmtnum[unlist(ts)]
+    options(warn = -1)
     if( length(ckfmtnum) > 0 ) {
-    fun2<-function(x){!is.numeric(x)}
+    fun2<-function(x){is.numeric(unlist(x))}
     tstfmtnum <- lapply(ckfmtnum,fun2)
     ckfmtnum <- ckfmtnum[unlist(tstfmtnum)]
-    stop(paste("argument ", names(ckfmtnum[1]), " is not a number", sep ="") )
-    }  
-    options(warn = -1)
+    if( all(tstfmtnum) == FALSE) stop(paste("argument ", names(ckfmtnum[1]), " is not a number", sep ="") )
+    }
     if(exists("Envir", mode= "environment") == FALSE) stop("Envir must be a
     valid R environment (e.g. not a charater variable")
     savvalue<-NA
